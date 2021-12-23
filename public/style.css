@@ -1,0 +1,1 @@
+#header{text-align:center}#books{display:grid;grid-template-columns:repeat(3, 200px);grid-template-rows:repeat(auto, 200px)}#book{margin:10px;border:1px;border-style:solid;display:grid;justify-items:center}body{background-image:url("alexandria.jpeg");background-repeat:repeat-y;display:flex;justify-content:center}
