@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ALEXANDRIA</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+	<div id = wrapper>
+        <div id = header>
+            <h1><u>ALEXANDRIA</u></h1>
+            <small>
+              <a href = "/atom.xml">RSS</a>
+            </small>
+            <p style = "font-size: large;">The Book Respository of infantilecomism dot net.</p>
+      
+           
+        </div>
+        <div id = books>
+          {% for page in section.pages  %}
+          <a href = {{page.permalink}}>
+           <div id = book>
+            
+                <img src="{{ page.title }}.jpeg" width = "100px" height = "150px" />
+            
+             {{ page.title }}
+             
+            
+            <small>{{ page.description }}</small>
+           </div>
+          </a>
+           {% endfor %}
+       
+        </div>
+    </div>
+  </body>
+</html>

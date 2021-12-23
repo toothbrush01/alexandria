@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{page.title}}</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="/stylepage.css" />
+  <link rel="icon" href="img/favicon.png">
+</head>
+<body>
+  <div id = wrapper>
+      <div id = book-img>
+        <img src = "/{{ page.title }}.jpeg"/>
+      </div>
+      
+      <div id = text>
+        <div><h2 style = 'text-align: center;'>{{page.title}}</h2> </div>
+        <div id = description>
+          <small style = 'margin-left: 5%;'>By: {{page.description}}</small>
+          <block> {{page.content |safe}} </block>
+        </div>
+          {% if page.taxonomies.tags %}
+            {% for tags in page.taxonomies.tags %}
+            <a style = 'text-decoration: none; margin-left: 5px;' href="{{ get_taxonomy_url (  kind = "tags", name=tags ) }}"> <small> #{{ tags }} </small> </a>
+            {% endfor %}
+            {% endif %}
+            <br>
+            <br>
+            <br>
+          <a href = "/">home</a>
+        
+      </div>
+  </div>
+</body>
+</html>
